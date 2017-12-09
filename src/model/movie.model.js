@@ -1,12 +1,17 @@
 const mongoose = require('mongoose');
 const TheatreSchema = require('./theatre.schema');
+const MoviesPlayingSchema = require('./moviesPlaying.schema');
 const Schema = mongoose.Schema;
 
 const MovieSchema = new Schema({
   title: {
     type: String,
-    required: [true, 'name is required.'],
+    required: [true, 'title is required.'],
     unique: true,
+  },
+  genre: {
+    type: String,
+    required: [true, 'genre is required.'],
   },
   description: {
     type: String,
@@ -19,7 +24,11 @@ const MovieSchema = new Schema({
   imagePath: {
     type: String
   },
-  theathres: {
+  datePlaying: {
+    type: [MoviesPlayingSchema],
+    required: [true, 'datePlaying is required']
+  },
+  theatres: {
     type: [TheatreSchema],
     // required: [true, 'ingredients are required.']
   }

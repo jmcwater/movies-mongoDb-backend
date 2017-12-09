@@ -8,7 +8,7 @@ var bodyParser = require('body-parser')
 var logger = require('morgan');
 var mongodb = require('./config/mongo.db');
 var movieroutes_v1 = require('./api/movie.routes.v1');
-// var ingredientroutes_v1 = require('./api/ingredient.routes.v1');
+var theatreroutes_v1 = require('./api/theatre.routes.v1');
 var config = require('./config/env/env');
 
 var app = express();
@@ -59,7 +59,7 @@ app.use(function (req, res, next) {
 // Installeer de routers
 
 app.use('/api/v1', movieroutes_v1);
-// app.use('/api/v1', ingredientroutes_v1);
+app.use('/api/v1', theatreroutes_v1);
 
 
 // Errorhandler voor express-jwt errors
