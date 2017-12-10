@@ -4,7 +4,7 @@ var mongodb = require('../config/mongo.db');
 var Movie = require('../model/movie.model');
 
 //
-// Lijst van alle recepten
+// Lijst van alle movies
 //
 routes.get('/movies', function(req, res) {
   res.contentType('application/json');

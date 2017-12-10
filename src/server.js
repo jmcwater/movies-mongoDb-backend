@@ -9,6 +9,7 @@ var logger = require('morgan');
 var mongodb = require('./config/mongo.db');
 var movieroutes_v1 = require('./api/movie.routes.v1');
 var theatreroutes_v1 = require('./api/theatre.routes.v1');
+var moviesPlayingroutes_v1 = require('./api/moviesPlaying.routes.v1');
 var config = require('./config/env/env');
 
 var app = express();
@@ -60,6 +61,7 @@ app.use(function (req, res, next) {
 
 app.use('/api/v1', movieroutes_v1);
 app.use('/api/v1', theatreroutes_v1);
+app.use('/api/v1', moviesPlayingroutes_v1);
 
 
 // Errorhandler voor express-jwt errors
