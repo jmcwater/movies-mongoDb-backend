@@ -9,6 +9,10 @@ const MovieSchema = new Schema({
     required: [true, 'title is required.'],
     unique: true,
   },
+  age: {
+    type: Number,
+    required: [true, 'Minimal age is required.'],
+  },
   genre: {
     type: String,
     required: [true, 'genre is required.'],
@@ -16,8 +20,8 @@ const MovieSchema = new Schema({
   description: {
     type: String,
     validate: {
-      validator: (description) => description.length < 300,
-      message: 'description max length is 300 characters.'
+      validator: (description) => description.length < 500,
+      message: 'description max length is 500 characters.'
     },
     required: [true, 'description is required.'],
   },

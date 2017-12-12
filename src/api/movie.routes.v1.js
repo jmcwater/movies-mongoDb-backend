@@ -62,7 +62,7 @@ routes.delete('/movies/:title', function(req, res) {
 //
 // Wijzigen van een recept
 //
-  routes.put('/movies/:title', function(req, res) {
+  routes.put('/movies/:title/edit', function(req, res) {
     res.contentType('application/json');
 
     let movieTitle = req.params.title;
