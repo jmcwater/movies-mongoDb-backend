@@ -18,9 +18,9 @@ routes.get('/theatres', function(req, res) {
 //
 // één theatre ophalen op naam
 //
-routes.get('/theatres/:theatre', function(req, res) {
+routes.get('/theatres/:theatres', function(req, res) {
   res.contentType('application/json');
-  var query = { title: req.params.title };
+  var query = { theatre: req.params.theatres };
 
   Theatre.find(query)
     .then((theatre) => {
@@ -47,12 +47,12 @@ routes.post('/theatres/new', function(req, res) {
 //
 // Verwijderen van een theatre
 //
-routes.delete('/theatres/:theatre', function(req, res) {
+routes.delete('/theatres/:theatres', function(req, res) {
   res.contentType('application/json');
 
-  let theatreName = req.params.theatre;
+  let theatreName = req.params.theatres;
 
-  Theatre.findOneAndRemove({theatre: theatreName})
+  Theatre.findOneAndRemove({theatres: theatreName})
     .then((theatre) => {
       res.status(200).json(theatre);
     })
@@ -62,13 +62,13 @@ routes.delete('/theatres/:theatre', function(req, res) {
 //
 // Wijzigen van een theatre
 //
-  routes.put('/theatres/:theatre', function(req, res) {
+  routes.put('/theatres/:theatres', function(req, res) {
     res.contentType('application/json');
 
-    let theatreName = req.params.theatre;
+    let theatreName = req.params.theatres;
     let updatedTheatre = req.body;
 
-    Theatre.findOneAndUpdate({theatre: theatreName}, updatedTheatre)
+    Theatre.findOneAndUpdate({theatres: theatreName}, updatedTheatre)
     .then((theatre) => {
       res.status(200).json(theatre);
     })

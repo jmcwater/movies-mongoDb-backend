@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const TheatreSchema = new Schema({
-  theatre: {
+  theatres: {
     type: String,
     required: [true, 'Theatre name is required.']
   },
