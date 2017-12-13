@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const TheatreSchema = require('./Theatre.schema');
+const TheatreSchema = require('./theatre.schema');
 const movieSchema = require('./movie.schema');
 
 const MoviesPlayingSchema = new Schema({
