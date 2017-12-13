@@ -28,10 +28,10 @@ const MovieSchema = new Schema({
   imagePath: {
     type: String
   },
-  datePlaying: {
-    type: [MoviesPlayingSchema],
-    required: [true, 'datePlaying is required']
-  },
+  // datePlaying: {
+  //   type: [MoviesPlayingSchema],
+  //   // required: [true, 'datePlaying is required']
+  // },
   theatres: {
     type: [TheatreSchema],
     // required: [true, 'ingredients are required.']

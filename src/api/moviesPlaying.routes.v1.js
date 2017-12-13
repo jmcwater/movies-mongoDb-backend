@@ -6,7 +6,7 @@ var MoviesPlaying = require('../model/moviesPlaying.model');
 //
 // Lijst van alle movies
 //
-routes.get('/moviesplaying', function(req, res) {
+routes.get('/movies-playing', function(req, res) {
   res.contentType('application/json');
   MoviesPlaying.find({})
     .then((MoviesPlaying) => {
@@ -19,7 +19,7 @@ routes.get('/moviesplaying', function(req, res) {
 //
 // movies op een bepaalde datum ophalen
 //
-routes.get('/moviesPlaying/:datePlaying', function(req, res) {
+routes.get('/movies-playing/:datePlaying', function(req, res) {
     res.contentType('application/json');
     var query = { datePlaying: req.params.datePlaying };
   
@@ -33,7 +33,7 @@ routes.get('/moviesPlaying/:datePlaying', function(req, res) {
 //
 // Toevoegen van een datum met film
 //
-routes.post('/moviesPlaying/new', function(req, res) {
+routes.post('/movies-playing/new', function(req, res) {
   res.contentType('application/json');
 
   let moviesPlaying = new MoviesPlaying(req.body);
@@ -48,7 +48,7 @@ routes.post('/moviesPlaying/new', function(req, res) {
 //
 // Verwijderen van een recept
 //
-routes.delete('/moviesPlaying/:datePlaying', function(req, res) {
+routes.delete('/movies-playing/:datePlaying', function(req, res) {
   res.contentType('application/json');
 
   let datePlaying = req.params.datePlaying;
@@ -63,7 +63,7 @@ routes.delete('/moviesPlaying/:datePlaying', function(req, res) {
 //
 // Wijzigen van een recept
 //
-  routes.put('/moviesPlaying/:datePlaying', function(req, res) {
+  routes.put('/movies-playing/:datePlaying', function(req, res) {
     res.contentType('application/json');
 
     let datePlaying = req.params.datePlaying;
