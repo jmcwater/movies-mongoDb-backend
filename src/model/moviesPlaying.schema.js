@@ -10,7 +10,7 @@ const MoviesPlayingSchema = new Schema({
   },
   timePlaying: {
     type: String,
-    required: [true, 'timeplaying is required.'],
+    // required: [true, 'timeplaying is required.'],
   },
   movie: {
     type: [movieSchema],

@@ -69,7 +69,7 @@ routes.delete('/movies-playing/:datePlaying', function(req, res) {
     let datePlaying = req.params.datePlaying;
     let updatedMovie = req.body;
 
-    moviesPlaying.findOneAndUpdate({datePlaying: datePlaying}, updatedMovie)
+    MoviesPlaying.findOneAndUpdate({datePlaying: datePlaying}, updatedMovie)
     .then((moviesPlaying) => {
       res.status(200).json(moviesPlaying);
     })
