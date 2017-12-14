@@ -9,6 +9,15 @@ const TheatreSchema = new Schema({
   city: {
     type: String,
     required: [true, 'City is required.']
+  },
+  adress: {
+    type: String,
+  },
+  zipcode: {
+    type: String,
+  },
+  phoneNumber: {
+    type: String,
   }
 });
 
